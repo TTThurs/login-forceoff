@@ -38,8 +38,13 @@ public class AddActivity extends BaseActivity {
                     book = new Book();
                     book.setName(book_name.getText().toString());
                     book.setAuthor(book_author.getText().toString());
-                    book.setPrice(Double.parseDouble(book_price.getText().toString()));
-                    book.setPages(Integer.parseInt(book_pages.getText().toString()));
+                    try {
+                        book.setPrice(Double.parseDouble(book_price.getText().toString()));
+                        book.setPages(Integer.parseInt(book_pages.getText().toString()));
+                    }catch (Exception e){
+                        Toast.makeText(AddActivity.this,"输入格式不对额",Toast.LENGTH_SHORT).show();
+                        AddActivity.this.finish();
+                    }
                     book.setPress((book_press.getText().toString()));
                     book.save();
                     Toast.makeText(AddActivity.this,"数据添加成功",Toast.LENGTH_SHORT).show();
