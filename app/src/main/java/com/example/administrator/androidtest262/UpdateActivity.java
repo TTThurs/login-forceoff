@@ -79,6 +79,11 @@ public class UpdateActivity extends BaseActivity {
                 else {
                     Toast.makeText(UpdateActivity.this,"您什么都没选额",Toast.LENGTH_SHORT).show();
                 }
+                name_update.setVisibility(View.INVISIBLE);
+                author_update.setVisibility(View.INVISIBLE);
+                price_update.setVisibility(View.INVISIBLE);
+                press_update.setVisibility(View.INVISIBLE);
+                pages_update.setVisibility(View.INVISIBLE);
             }
         });
         commit_update.setOnClickListener(new View.OnClickListener() {

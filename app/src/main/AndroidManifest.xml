@@ -3,15 +3,14 @@
     package="com.example.administrator.androidtest262">
 
     <application
-        android:allowBackup="true"
         android:name="org.litepal.LitePalApplication"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.administrator.androidtest262.MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,9 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BaseActivity"/>
-        <activity android:name=".AddActivity"/>
-        <activity android:name=".UpdateActivity"/>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".AddActivity" />
+        <activity android:name=".UpdateActivity" />
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="com.example.administrator.androidtest262.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
